@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website in Phone UI</title>
+    <style>
+        body {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+        }
+
+        .left-image {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            /* Adjust left position as needed */
+            transform: translateY(-50%);
+        }
+
+        .phone {
+            width: 375px;
+            height: 667px;
+            background-color: #333;
+            border: 4px solid black;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .responsive-website {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .mysite {
+            display: none;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            body {
+                margin: 0;
+            }
+
+            .phone {
+                display: none;
+                /* Hide the phone UI on smaller screens */
+            }
+
+            .screen {
+                width: 100vw;
+                /* Fill the viewport width */
+                height: 100vh;
+                /* Fill the viewport height */
+                border-radius: 0;
+                /* Remove border radius */
+            }
+
+            .mysite {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left-image">
+        <img src="qrcode.png" alt="Left Image" style="width: 250%; height: 250%;margin-left: 100px;">
+    </div>
+    <div class="phone">
+        <div class="screen">
+            <iframe class="responsive-website" src="https://saravanan260203.github.io/Halloween/"></iframe>
+        </div>
+    </div>
+    <iframe class="mysite" src="https://saravanan260203.github.io/Halloween/"></iframe>
+</body>
+
+</html>
